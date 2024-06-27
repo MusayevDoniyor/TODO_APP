@@ -1,34 +1,8 @@
 import React, { Component } from "react";
-import { INIT } from "../helper/tasks";
-import { Reducer } from "../../reducer/Reducer";
 
 class TaskTodo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      tasks: INIT,
-    };
-  }
-
-  addTask = (newTask) => {
-    const taskToAdd = {
-      id: this.state.tasks.length + 1,
-      title: newTask,
-      done: false,
-    };
-
-    this.setState((prevState) => ({
-      tasks: Reducer(prevState.tasks, {
-        type: "ADD_TASK",
-        payload: taskToAdd,
-      }),
-    }));
-  };
-
   render() {
-    const tasksToDisplay =
-      this.props.tasks ||
-      this.state.tasks.filter((task) => task.status === "todo");
+    const tasksToDisplay = this.props.tasks || [];
 
     return (
       <div className="w-full md:w-[90%] mt-12 pl-4 md:pl-8 pr-4 md:pr-7 mx-auto">

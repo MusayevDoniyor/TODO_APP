@@ -1,11 +1,10 @@
 import React from "react";
-import { Reducer } from "../../reducer/Reducer";
 
 const DoneTasks = ({ doneTasks, undoTask }) => {
   return (
     <div className="w-full md:w-[90%] mt-12 mb-5 pl-4 md:pl-8 pr-4 md:pr-7 mx-auto">
       <h2 className="text-white font-normal font-inter text-base">
-        Done - {doneTasks.length}{" "}
+        Done - {doneTasks.length}
       </h2>
       <ul className="flex flex-col gap-4 mt-7">
         {doneTasks.map((t) => (
